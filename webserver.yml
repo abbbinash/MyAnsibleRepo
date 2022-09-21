@@ -16,4 +16,5 @@
   - name: i want to install webserver
     yum: 
      name: httpd
-     state: present 
+     state: present
+    when: ansible_os_family == "RedHat"  
