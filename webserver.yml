@@ -14,7 +14,7 @@
      state: started   
     
 
-  - name: i want to install webserver
+  - name: i want to install redhat webserver
     yum: 
      name: httpd
      state: present
