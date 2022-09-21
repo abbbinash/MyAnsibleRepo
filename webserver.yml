@@ -13,3 +13,7 @@
      name: apache2
      state: started   
     when: ansible_os_family == "Debian"
+  - name: i want to install webserver
+    yum: 
+     name: httpd
+     state: present 
