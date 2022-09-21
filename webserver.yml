@@ -18,13 +18,13 @@
 
   - name: i want to install redhat webserver
     yum: 
-     name: redhat
+     name: httpd
      state: present
     when: ansible_os_family == "RedHat" 
 
   - name: start webserver
     service:    
-      name: redhat
+      name: httpd
       state: started
     when: ansible_os_family == "RedHat" 
     
