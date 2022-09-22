@@ -9,6 +9,6 @@
     when: ansible_os_family=="Debian" 
   - name: run 
     service:     
-     name: httpd
+     name: apache2
      state: started
     when: ansible_os_family=="Debian"   
