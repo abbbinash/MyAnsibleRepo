@@ -20,7 +20,7 @@
   - name: run
     yum: 
      name: httpd
-     state: started
+     state: latest
     when: ansible_os_family=="RedHat"      
 
   
