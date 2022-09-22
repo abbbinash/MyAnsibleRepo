@@ -1,8 +1,4 @@
-[ubuntuserver ]
+[mywebserver]
 172.31.32.164
 172.31.42.142
-
-
-
-[redhatserver]
 172.31.35.13
