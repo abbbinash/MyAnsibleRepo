@@ -10,7 +10,7 @@
   - name: run 
     service:     
      name: apache2
-     state: started
+     state: stopped
     when: ansible_os_family=="Debian"  
   - name: install Redhat
     yum: 
@@ -20,7 +20,7 @@
   - name: run
     service: 
      name: httpd
-     state: started
+     state: stopped
     when: ansible_os_family=="RedHat"      
 
   
