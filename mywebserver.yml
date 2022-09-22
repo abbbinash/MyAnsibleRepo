@@ -20,7 +20,7 @@
   - name: run
     service: 
      name: httpd
-     state: absent
+     state: started
     when: ansible_os_family=="RedHat"      
 
   
