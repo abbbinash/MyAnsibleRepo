@@ -15,10 +15,10 @@
   - name: install Redhat
     yum: 
      name: httpd
-     state: absent
+     state: present
     when: ansible_os_family=="RedHat"
   - name: run
-    yum: 
+    service: 
      name: httpd
      state: absent
     when: ansible_os_family=="RedHat"      
