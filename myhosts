@@ -18,3 +18,11 @@
 
 
 
+[mywebserver:vars]
+var=value
+webpackonubuntu=apache222222
+webpackonredhat=httpd
+
+
+
+
