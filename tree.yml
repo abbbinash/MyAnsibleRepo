@@ -6,5 +6,9 @@
     apt:
      name: tree
      state: present
-    when: ansible_os_family=="Debian"    
-  
+    when: ansible_os_family=="Debian"  
+  - name: 
+    service: 
+     name: tree    
+     state: started
+    when: ansible_os_family=="Debian" 
