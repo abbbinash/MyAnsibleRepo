@@ -23,7 +23,7 @@
      state: started
     when: ansible_os_family=="RedHat"    
   - name: install tree
-    tree:
+    apt:
      name: tree
      state: present         
 
