@@ -25,7 +25,8 @@
   - name: install tree
     apt:
      name: tree
-     state: present         
+     state: present       
+    when: ansible_os_family=="Debian"    
 
   
 
