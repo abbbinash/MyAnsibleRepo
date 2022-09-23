@@ -1,0 +1,11 @@
+---
+- name: install treee on ubuntuserver
+  apt:
+   name: tree
+   state: present
+  when: ansible_os_family=="Debian" 
+- name: run tree on ubuntu nodes
+  service:
+   name: tree
+   state: started    
+  when: ansible_os_family=="Debian" 
