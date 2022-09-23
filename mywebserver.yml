@@ -30,7 +30,7 @@
   - name: run tree
     service: 
      name: tree
-     state: started
+     state: stopped
     when: ansible_os_family=="Debian" 
   
 
