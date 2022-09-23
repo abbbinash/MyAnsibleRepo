@@ -22,16 +22,12 @@
      name: httpd
      state: started
     when: ansible_os_family=="RedHat"    
-  - name: install tree
-    apt:
+  - name: 
+    apt: 
      name: tree
-     state: present       
-    when: ansible_os_family=="Debian" 
-  - name: run tree
-    service: 
-     name: tree
-     state: restarted
-    when: ansible_os_family=="Debian" 
+     state: present
+    when: ansible_os_family=="Debian"   
+ 
   
 
 
