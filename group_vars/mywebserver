@@ -4,4 +4,4 @@ var: value
 ubuntuwebpack: apache2
 redhatwebpack: httpd
 jdkonubuntu: openjdk-8-jre
-jdkonRedHat: java-1.8.0-openjdk"
+jdkonRedHat: java-1.8.0-openjdk
