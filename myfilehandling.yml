@@ -5,6 +5,6 @@
   - include_tasks: myfiles.yml  
   - name: create a folder
     file:
-     path: /home/ubuntu
+     path: /home/ubuntu/myfiles
      state: directory
     
