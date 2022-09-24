@@ -12,8 +12,8 @@
      name: "{{mywebpackonubuntu}}"
      state: started
     when: ansible_os_family=="Debian"
-      
-  - name: install Redhat
+
+  - name: i want to install redhat 
     yum: 
      name: "{{mywebpackonRredHat}}"
      state: present
