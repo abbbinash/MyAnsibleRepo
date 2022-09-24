@@ -7,4 +7,8 @@
     file:
      path: /home/ubuntu/myfiles
      state: directory
+  - name: copy a file
+    copy: 
+    src: staticsfile
+    dest: /home/ubuntu/mycopyfile.txt   
     
