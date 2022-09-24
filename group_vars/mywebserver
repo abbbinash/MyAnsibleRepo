@@ -1,5 +1,5 @@
 ---
 
 var: value
-ubuntuwebpack: nginx
+ubuntuwebpack: apache2
 redhatwebpack: httpd
