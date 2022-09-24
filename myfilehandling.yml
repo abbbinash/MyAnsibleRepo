@@ -10,9 +10,10 @@
   - name: copy a file
     copy: 
      src: staticsfile
-     dest: /home/ubuntu/mycopyfile.txt   
-  - name: copy dynamic file
-    template: 
-      src: mydynamicfile.j2                                                     
-      dest: /var/www/html/html.index   
+     dest: /home/ubuntu/mycopyfile.txt  
+  - name: install apache
+    apt:
+     name: "{{ubuntuwebpack}}"
+     state: present    
+  
     
