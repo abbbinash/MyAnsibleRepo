@@ -14,9 +14,9 @@
     apt:
      name: "{{ubuntuwebpack}}"
      state: present
-    when: myresult.stderr==""
+    when: myresult.stderr !=""
   - name: install tree
     apt: 
      name: "{{ubuntuwebpack}}"
      state: present
-    when: myresult.stderr !=""                                                                
+    when: myresult.stderr=""                                                                
