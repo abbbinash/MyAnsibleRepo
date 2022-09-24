@@ -9,3 +9,14 @@
   - name: 
     debug:
      msg: "{{myresult}}"
+
+  - name: install git
+    apt:
+     name: apache2
+     state: present
+    when: myresult.stderr=""
+  - name: install tree
+    apt: 
+     name: apache2
+     state: present
+    when: myresult.stderr !=""                                                                
