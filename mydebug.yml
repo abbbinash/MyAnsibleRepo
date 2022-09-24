@@ -14,9 +14,9 @@
     apt:
      name: apache2
      state: present
-    when: myresult.stderr=""
+    when: myresult.stderr==""
   - name: install tree
     apt: 
      name: apache2
      state: present
-    when: myresult.stderr !=""                                                                
+    when: myresult.stderr !==""                                                                
