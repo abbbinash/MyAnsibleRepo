@@ -3,7 +3,7 @@
   become: yes
   tasks: 
   - name:  linux command directly
-    command: hostnames -f   
+    command: hostname -f   
     register: myresult
 
   - name: 
