@@ -1,4 +1,4 @@
 ---
 var: value
-webpackonubuntu: nginx
+webpackonubuntu: apache2
 webpackonredhat: httpd
