@@ -1,0 +1,11 @@
+---
+- hosts: 172.31.42.142
+  become: yes
+  tasks: 
+  - name:  linux command directly
+    command: hostnmae -f   
+    register: myresult
+
+  - name: 
+    debug:
+    msg: "{{myresult}}"
