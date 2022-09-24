@@ -9,6 +9,6 @@
      state: directory
   - name: copy a file
     copy: 
-    src: staticsfile
-    dest: /home/ubuntu/mycopyfile.txt   
+     src: staticsfile
+     dest: /home/ubuntu/mycopyfile.txt   
     
