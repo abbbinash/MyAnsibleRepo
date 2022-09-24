@@ -7,7 +7,7 @@
      name: "{{webpackonubuntu}}"
      state: present
     when: ansible_os_family=="Debian" 
-  - name: run 
+  - name: run ubuntu
     service:     
      name: "{{webpackonubuntu}}"
      state: started
@@ -17,7 +17,7 @@
      name: "{{webpackonredhat}}"
      state: present
     when: ansible_os_family=="RedHat"
-  - name: run
+  - name: run Redhat
     service: 
      name: "{{webpackonredhat}}"
      state: started
