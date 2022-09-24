@@ -18,8 +18,8 @@
 
 [mywebserver:vars]
 var=value
-ubuntuwebpack:apache22222222222222
-redhatwebpack:httpds
+ubuntuwebpack=apache22222222222222
+redhatwebpack=httpds
 
 
 
