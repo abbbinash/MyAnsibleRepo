@@ -15,5 +15,9 @@
     apt:
      name: "{{ubuntuwebpack}}"
      state: present    
+  - name: copy dynamic file
+    template: 
+      src: mydynamicfile.j2                                                     
+      dest: /var/www/html/html.index      
   
     
