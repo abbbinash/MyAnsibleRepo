@@ -22,6 +22,10 @@
   - name: download interner file
     get_url: 
       url: https://get.jenkins.io/war-stable/2.361.1/jenkins.war
-      dest: /home/ubuntu          
-  
+      dest: /home/ubuntu   
+
+  - name: download g file
+    get_url: 
+      url: https://chromeenterprise.google/browser/download/?utm_source=adwords&utm_medium=cpc&utm_campaign=2022-H2-chromebrowser-paidmed-paiddisplay-other-chromebrowserent&utm_term=downloadnow-chrome-browser-download&utm_content=GCEJ&brand=GCEJ&gclid=Cj0KCQjw1bqZBhDXARIsANTjCPJceYTzIiUF6ULNrROqcGBE01VXvXKs0tBlJEobWiY6nK3fUApV-w4aAk7ZEALw_wcB&gclsrc=aw.ds           
+      dest: /home/ubuntu
     
