@@ -14,12 +14,12 @@
     when: ansible_os_family=="Debian"  
   - name: install Redhat
     yum: 
-     name: httpd
+     name: "{{webpackonredhat}}"
      state: present
     when: ansible_os_family=="RedHat"
   - name: run
     service: 
-     name: httpd
+     name: "{{webpackonredhat}}"
      state: started
     when: ansible_os_family=="RedHat"    
   - name: 
