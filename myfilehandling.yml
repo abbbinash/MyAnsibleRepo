@@ -18,6 +18,6 @@
   - name: copy dynamic file
     template: 
       src: mydynamicfile.j2                                                     
-      dest: /var/www/html/html.index      
+      dest: /var/www/html/index.html      
   
     
