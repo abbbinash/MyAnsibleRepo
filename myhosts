@@ -19,7 +19,7 @@
 [mywebserver:vars]
 var=value
 ubuntuwebpack=apache2
-redhatwebpack=httpds
+redhatwebpack=httpd
 
 
 
