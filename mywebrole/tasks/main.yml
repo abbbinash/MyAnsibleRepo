@@ -1,2 +1,8 @@
 ---
 # tasks file for mywebrole
+- name: install web sserver
+  apt: 
+   name: "{{ubuntuwebpack}}"
+   state: present 
+
+ 
