@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks: 
+  - name: install tomcat on servers
+    apt: 
+      name: tomcat
+      state: present
+
+  - name: start tomcat
+    service: 
+      name:  tomcat
+      state: started   
+    
