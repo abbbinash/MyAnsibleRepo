@@ -7,7 +7,7 @@
       name: "{{ item }}"
       state: present
       
-      - with items:
+      - with_items:
         - user1
         - user2
         - user3
