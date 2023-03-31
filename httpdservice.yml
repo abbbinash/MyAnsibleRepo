@@ -23,6 +23,3 @@
     copy: 
     content: "Welcome!\n"
     dest: /var/www/index.html
-
-
-
