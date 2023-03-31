@@ -23,3 +23,8 @@
     copy: 
     content: "Welcome!\n"
     dest: /var/www/index.html
+  - name: httpd start
+    service:
+     name: httpd
+     enabled: true
+     state: started
