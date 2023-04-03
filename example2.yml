@@ -1,0 +1,30 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: update httpd & firewalld
+    yum: 
+     name: 
+      - httpd
+      - firewalld
+     state: latest
+  - name: firewalld is running
+    service: 
+     name: firewalld
+     state: started
+     enabled: true
+  - name: firewalld permits access to httpd service
+    firewalld:
+      service: http
+      permanent: true
+      state: enabled
+      immediate: yes
+  - name: copying the right content
+    copy: 
+    content: "Welcome!\n"
+    dest: /var/www/index.html
+  - name: httpd start
+    service:
+     name: httpd
+     enabled: true
+     state: started
