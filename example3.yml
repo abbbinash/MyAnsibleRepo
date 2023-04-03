@@ -11,7 +11,7 @@
         - php
         - php-mysqlnd
       state: started
-  - name: firewall service
+  - name:  Start firewall service
     service: 
       name: firewalld
       state: started
