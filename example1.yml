@@ -1,3 +1,5 @@
+#Write a palybook that installs apachewebserver and opens the ports for service to reachable.Use the vsriables.
+
 ---
 - hosts: webserver
   vars:
@@ -16,7 +18,8 @@
           - "{{ firewall_pkg }}"
           - "{{ python_pkg }}"
         state: latest
-
+        
+#Create two tasks to make sure that the httpd and firewalld services are started and enabled.
     - name: The {{ firewall_service }} service is started and enabled
       service:
         name: "{{ firewall_service }}"
@@ -28,18 +31,19 @@
         name: "{{ web_service }}"
         enabled: true
         state: started
-
+#Copying content
     - name: Web content is in place
       copy:
         content: "Example web content"
         dest: /var/www/html/index.html
-
+#Make sure Firewall ports are open
     - name: The firewall port for {{ rule }} is open
       firewalld:
         service: "{{ rule }}"
         permanent: true
         immediate: true
         state: enabled
+#Write another playfor verifying thewrb server is running.        
 
 - name: Verify the Apache service
   hosts: localhost
