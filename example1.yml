@@ -1,6 +1,5 @@
 ---
-- name: Deploy and start Apache HTTPD service
-  hosts: webserver
+- hosts: webserver
   vars:
     web_pkg: httpd
     firewall_pkg: firewalld
@@ -8,7 +7,7 @@
     firewall_service: firewalld
     python_pkg: python3-PyMySQL
     rule: http
-
+- name: Deploy and start Apache HTTPD service
   tasks:
     - name: Required packages are installed and up to date
       yum:
