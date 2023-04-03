@@ -8,7 +8,7 @@
       - httpd
       - firewalld
      state: latest
-  - name: firewalld is running
+  - name: run firewallld service
     service: 
      name: firewalld
      state: started
