@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: create a directory
+    file:
+      path: /MyAnsibleRepo
+      owner: root
+      state: directory
