@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: yes
+  tasks: 
+  - name: create a file 
+    file:
+      path: /home/devops/mynewfile.txt
+      state: touch

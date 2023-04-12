@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: creating the required cron file
+    cron:
+      name: "add date and time"
+      minute: "/*2"
+      hour: "9-16"
+      weekday: "1-5"
+      user: "devops"
+      job: "date >> /home/devops/my_date_time_cron_job"
+      cron_file: add-date-time
+      state: present
+     
+  

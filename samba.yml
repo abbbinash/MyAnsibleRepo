@@ -1,0 +1,12 @@
+---
+- hosts: all
+  user: devops
+  become: yes
+  vars: 
+   - install_state: installed
+   - randowm_var: "This is colon: test"
+  tasks: 
+  - name: install samba
+    yum:
+      name: samba
+      state: installed

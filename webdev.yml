@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  become: yes
+  tasks: 
+  - name: create user 
+    user:
+     name: webdev
+     state: present
+  - name: create the required directory
+    file: 
+      name: Avcbdev
+      path: /webdev
+      owner: webdev
+      mode: 2755
+      state: directory
+  - name: creating symbolic link
+    file:
+      src: /root/MyAnsibleRepo/webdev
+      path: /var/www/html/webdev
+      state: link
+      force: yes
+  - name: create index.html
+    file:
+      content: Development
+      dest: /webdev/index.html
+ 
+

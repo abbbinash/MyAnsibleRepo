@@ -1,0 +1,91 @@
+---
+- hosts: webserver
+  become: yes
+  vars:
+    firewall_pkg: firewalld
+    firewall_svc: firewalld
+    web_pkg: httpd
+    web_svc: httpd
+    ssl_pkg: mod_ssl
+    httpdconf_src: files/httpd.conf
+    httpdconf_dest: /etc/httpd/conf/httpd.conf
+    htaccess_src: files/.htaccess
+    secrets_dir: /etc/httpd/secrets
+    secrets_src: files/htpasswd
+    secrets_dest: '{{ secrets_dir }}/htpasswd"
+    web_root: /var/www/html
+  tasks:
+  - name: installing therequired  packages
+    yum:
+      name: 
+       - "{{ firewall_pkg }}"
+       - "{{ web_pkg }}"
+       - "{{ ssl_pkg }}" 
+      state: latest 
+  - name: copying the required file
+    copy: 
+      src: "{{ httpdconf_src }}"
+      dest: "{{ httpdconf_dest }}"
+      owner: root
+      group: root
+      mode: 0644
+  - name: create the directory
+    file:
+      path: "{{ secrets_dir }}"
+      state: directory
+      owner: apache
+      group: apache
+      mode: 0500
+  - name: ensuring the file is present
+    copy: 
+      src: "{{ secrets_src }}"
+      dest: "{{ secrets_dest}}"
+      owner: apache
+      group: apache
+      mode: 0400
+  - name: create .htaccess file
+    copy: 
+     src: "{{ htaccess_src }}" 
+     dest: "{{ webroot }}/.htaccess"
+     owner: apache
+     group: apache
+     mode: 0400
+  - name: creating the content file
+    copy: 
+     content: "{{ ansible_hostname }} ({{ ansible_default_ipv4.address }}) has be customized by ansible"
+     src: "{{ web_root }}/.htaccess"
+    
+  - name: enabling the firewall service
+    service: 
+       name: "{{ firewall_svc }}" 
+       state: enabled
+  - name: allowing users for httpd
+    firewalld:
+      service: httpd
+      state: enabled
+      immediate: true
+      permanent: true
+  - name: starting the web services
+    service:
+      name: "{{ web_svc }}"
+      state: started
+
+- hosts: localhost
+  vars: 
+   web_user: guest
+  vars_file:
+     vars/secret.yml
+  tasks:
+  - name: connect to web server with basic auth
+    uri:
+      url: https://severb.lab.example.com
+      validate_certs: no
+      force_basic_auth: yes
+      user: "{{ web_user }}"
+      password: "{{ web_pass }}"
+      return_content: yes
+      status_code: 200
+    register: auth_test
+  - debug:
+      var: auth_test.content 
+

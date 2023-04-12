@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: yes
+  tasks: 
+  - name: reboot the managed hosts
+    reboot:
+       
+   

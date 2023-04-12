@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  become: yes
+  tasks: 
+  - name: remmove cronjob
+    cron: 
+      name: add data and time to a file
+      user: devops
+      cron_file: add-date-time
+      state: absent

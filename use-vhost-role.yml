@@ -1,0 +1,16 @@
+---
+- hosts: webservers
+  pre_tasks:
+    - name: pre_task message
+      debug:
+         msg: 'Ensure web server configuration'
+  roles: 
+    - myvhost
+  post_tasks: 
+    - name: HTML content is installed
+      copy: 
+        src: files/html/
+        dest: "/var/www/vhosts/{{ ansible_hostname }}"
+    - name: post_task message
+      debug:
+         msg: 'Webserver is configured'
