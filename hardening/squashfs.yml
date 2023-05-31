@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+  - name: disable squashfs file system
+    lineinfile:
+       path: /etc/modprobe.d/squashfs.conf
+       create: true
+       state: present
+       line: "{{ item }}"
+    with_items:
+      - install squashfs /bin/false 
+      - blacklist squashfs 
+

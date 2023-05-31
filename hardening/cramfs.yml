@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  tasks: 
+  - name: Disable cramfs
+    lineinfile:
+      dest: /etc/modprobe.d/cramfs.conf
+      state: present
+      line: "{{ item }}"
+    with_items:
+        - install cramfs/bin/false
+        - blacklist cramfs
+
+#  - name: unload the cramfs from kernel
+#    modprobe:
+#       name: cramfs
+#       state: absent 

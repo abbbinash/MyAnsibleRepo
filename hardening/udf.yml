@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Ensure udf is disabled
+    lineinfile:
+      dest: /etc/modprobe.d/udf.conf
+      state: present
+      line: "{{ item }}"
+    with_items:
+      - install udf /bin/false 
+      - blacklist udf 
+
+  - name: unload the udf module
+    modprobe:
+     name: udf
+     state: absent
